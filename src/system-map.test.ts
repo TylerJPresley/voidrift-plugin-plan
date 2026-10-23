@@ -235,7 +235,7 @@ describe("plan plugin — rendering the map and the surprise (§6, §7)", () => 
     expect(d).toContain("touches: src/parser/**, src/index.ts");
 
     // A plan with no maps costs the digest nothing extra (no map lines).
-    const bare: Plan = { ...plan, steps: plan.steps.map((s) => ({ ...s, systemMap: undefined })) };
+    const bare: Plan = { ...plan, steps: plan.steps.map(({ systemMap: _dropped, ...rest }) => rest) };
     const db = digest(bare);
     expect(db).not.toContain("purpose:");
     expect(db).not.toContain("touches:");
