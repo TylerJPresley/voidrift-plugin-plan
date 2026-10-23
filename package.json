@@ -30,6 +30,7 @@
     "@voidrift/core": "^0.1.0"
   },
   "devDependencies": {
+    "@langchain/core": "1.2.17",
     "@types/node": "26.6.5",
     "@voidrift/core": "^0.1.0",
     "typescript": "5.9.3",
